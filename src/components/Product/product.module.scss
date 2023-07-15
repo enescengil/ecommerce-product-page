@@ -1,0 +1,196 @@
+@import "../../styles/variables.scss";
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 91px;
+  padding: 0 65px;
+  display: flex;
+  justify-content: center;
+  gap: 200px;
+  .image {
+    width: 445px;
+    height: 445px;
+    img {
+      border-radius: 15px;
+    }
+  }
+  .images {
+    display: flex;
+    max-width: 445px;
+    justify-content: space-between;
+    margin-top: 32px;
+    margin-bottom: 132px;
+    img {
+      width: 88px;
+      height: 88px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.2s ease all;
+      &:hover{
+        opacity: .6;
+      }
+    }
+    .border {
+      border: 2px solid transparent;
+    }
+    .active {
+      border: 2px solid $orange;
+      border-radius: 12px;
+      img {
+        opacity: 0.5;
+      }
+    }
+  }
+  .right {
+    max-width: 450px;
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .brand {
+      color: $orange;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1.12px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .name {
+      color: $very-dark-blue;
+      font-size: 44px;
+      font-weight: 700;
+      padding-bottom: 35px;
+    }
+    .description {
+      color: $dark-grayish-blue;
+      line-height: 26px; /* 162.5% */
+      padding-bottom: 35px;
+    }
+    .current_price {
+      color: $very-dark-blue;
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 26px; /* 86.667% */
+      display: flex;
+      align-items: center;
+    }
+    .discount {
+      border-radius: 5px;
+      background: $pale-orange;
+      color: var(--orange, #ff7d1a);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 26px; /* 162.5% */
+      padding: 5px 10px;
+    }
+    .price {
+      padding-top: 15px;
+      color: $very-dark-blue;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 26px; /* 162.5% */
+      letter-spacing: 0.48px;
+      text-decoration-line: line-through;
+    }
+    .button_wrapper {
+      display: flex;
+      margin-top: 34px;
+      gap: 15px;
+      .counter {
+        background-color: $light-grayish-blue;
+        display: flex;
+        width: 157px;
+        height: 55px;
+        justify-content: space-between;
+        align-items: center;
+        align-items: center;
+        span {
+          color: var(--black, #000);
+          font-size: 16px;
+          font-weight: 700;
+          letter-spacing: 1.28px;
+        }
+        button {
+          padding: 0 16px;
+          background-color: transparent;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          height: 100%;
+        }
+      }
+      .add_to_cart {
+        display: flex;
+        padding: 17px 77px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 10px;
+        background: $orange;
+        box-shadow: 0px 8px 10px 0px #ffede0;
+        color: var(--white, #fff);
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: .2s ease all;
+        &:hover{
+          opacity: .5;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .container {
+    gap: 50px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .container {
+    gap: 50px;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    .image {
+      width: 100% !important;
+    }
+    .button_wrapper {
+      flex-direction: column;
+      margin-bottom: 80px;
+      .counter {
+        width: 100% !important;
+      }
+    }
+    .text_wrapper {
+      padding: 22px;
+    }
+    .price_wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      .price {
+        padding: 0;
+      }
+    }
+    .name {
+      font-size: 28px !important;
+      padding-bottom: 16px !important;
+    }
+    .description {
+      font-size: 14px;
+    }
+    .image_wrapper {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+@import "../../styles/_variables.scss";
+
+.container {
+  display: none;
+  height: 110vh;
+  width: 100%;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  z-index: 1000;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  .image_wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 550px;
+    .close_btn {
+      margin-left: auto !important;
+      margin: 24px 0;
+      cursor: pointer;
+      path {
+        transition: 0.2s ease all;
+      }
+      &:hover {
+        path {
+          fill: $orange;
+        }
+      }
+    }
+    .image {
+      height: 550px;
+      img {
+        border-radius: 15px;
+      }
+    }
+    .images {
+      display: flex;
+      justify-content: space-evenly;
+      padding-top: 42px;
+      .thumbnail {
+        height: 92px;
+        border-radius: 10px;
+        background-color: white;
+        img {
+          border-radius: 10px;
+          transition: 0.2s ease all;
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+      }
+      .active {
+        height: 92px;
+        border: 2px solid $orange;
+        border-radius: 12px;
+        background-color: white;
+        img {
+          border-radius: 10px;
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}
